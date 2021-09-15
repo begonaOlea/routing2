@@ -1,0 +1,43 @@
+<h4> Usuarios</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td> {{ usuario.id }}
+      </td>
+      <td>
+        {{ usuario.nombre }}
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="onSeleccionado(usuario)">Editar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<div>
+
+  <div *ngIf="mostrarFormulario">
+    <form #f="ngForm">
+      <label>Id:
+        <input [(ngModel)]="usuario.id" placeholder="id" #id="ngModel" required min="1" name="id">
+      </label>
+      <label>name:
+        <input [(ngModel)]="usuario.nombre" placeholder="nombre" name="nombre" required>
+      </label>
+
+      <button (click)="onRecuperarUsuarioPorId()" class="btn btn-primary" [disabled]="id.invalid">Buscar
+        usuario</button>
+      <button (click)="onModificarUsuario()" class="btn btn-primary" [disabled]="f.invalid">Modificar</button>
+      <button (click)="onCrearUsuario()" class="btn btn-primary" [disabled]="f.invalid">Crear</button>
+      <button (click)="onBorrarUsuario()" class="btn btn-primary" [disabled]="id.invalid">Borrar</button>
+    </form>
+    {{ msg }}
+  </div>
+
+</div>

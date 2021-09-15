@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li class="nav-item"><a routerLink="/servers" class="nav-link">Servers</a></li>
+        <li class="nav-item"><a routerLink="/users" class="nav-link" routerLinkActive="active">Users</a></li>
+
+        <li class="nav-item"><a routerLink="/registro" class="nav-link" routerLinkActive="active">Registrar Usuarios</a>
+        </li>
+        <li class="nav-item"><a routerLink="/registro-react" class="nav-link" routerLinkActive="active">Registrar
+            Usuario React</a></li>
+
+        <li class="nav-item"><a routerLink="/usuarios-http" class="nav-link" routerLinkActive="active">Registrar
+            Usuarios http</a></li>
+
+        <li class="nav-item"><a routerLink="/login" 
+          class="nav-link" 
+          routerLinkActive="active">Login</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!--app-entradas-blog></app-entradas-blog-->
+
+  </div>
